@@ -12,7 +12,7 @@ forms.addEventListener('submit', (event) => {
   const imagen = document.getElementsByName('imagen')[0].value;
 
   //envia el producto
-  socket.emit('new-product', {nombre, precio, imagen});
+  socket.emit('new-products', {nombre, precio, imagen});
   console.log({nombre, precio, imagen});
 
   // limpiamos el form
