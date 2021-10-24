@@ -31,7 +31,7 @@ io.on('connection', async socket => {
     
     // Fecha y hora
     socket.on('new-message', async message => {
-        message.fyh = new Date().toLocaleDateString();
+       message.fyh = new Date().toLocaleDateString();
 
         await saveMessage(message);
   

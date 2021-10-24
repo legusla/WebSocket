@@ -1,8 +1,4 @@
-const messages = [
-    { author: "Juan", text: "¡Hola! ¿Que tal?" },
-    { author: "Pedro", text: "¡Muy bien! ¿Y vos?" },
-    { author: "Ana", text: "¡Genial!" }
-  ];
+const messages = [];
   
   const getMessages = () => {
     return messages;
