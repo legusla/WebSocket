@@ -22,5 +22,11 @@
     "precio": "123",
     "imagen": "qwe",
     "id": 4
+  },
+  {
+    "nombre": "qwe",
+    "precio": "123",
+    "imagen": "qwe",
+    "id": 5
   }
 ]

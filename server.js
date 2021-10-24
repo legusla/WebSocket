@@ -6,7 +6,7 @@ const Contenedor = require('./Contenedor');
 
 const productosRouter = require('./routers/productos');
 
-const { getMessages, saveMessage } = require('./models/Messages');
+const { getMessages, saveMessages } = require('./models/Messages');
 const path = require('path');
 
 const miContenedor = new Contenedor('./data/productos.json');
@@ -32,20 +32,20 @@ app.set('view engine', '.hbs');
 const productosContenedor = new Contenedor('./data/productos.json');
 
 io.on('connection', async socket => {
-    console.log(`Nuevo cliente conectado: ${socket.id}`)
+    console.log(`Nuevo cliente conectado: ${socket.id}`);
     
     // Mensajes
     const messages = await getMessages();
     socket.emit('messages', messages); 
     
     // Fecha y hora
-    socket.on('new-message', async message => {
-       message.fyh = new Date().toLocaleDateString();
+    socket.on('new-message', async data => {
+        data.fyh = new Date();
 
-        await saveMessage(message);
+        await saveMessages(data);
   
-        const messages = getMessages() 
-        io.sockets.emit('messages', messages)  
+        const messages = await getMessages(); 
+        io.sockets.emit('messages', messages);  
   });
 
     // Agrega producto
@@ -57,6 +57,8 @@ io.on('connection', async socket => {
     socket.on('new-products',  (product) => {
     productosContenedor.save(product);
     const products = productosContenedor.getAll();
+
+    io.sockets.emit('products', products);
     });
 });
 

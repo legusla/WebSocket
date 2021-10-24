@@ -40,7 +40,7 @@ const renderMessages = (messages) => {
   const htmls = messages.map((messsage) => {
     return(`
       <div>
-        <strong class="text-primary">${messsage.author}</strong>:
+        <strong class="text-primary">${messsage.author}</strong>
         <em>${messsage.text}</em>
       </div>
     `);

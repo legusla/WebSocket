@@ -4,11 +4,11 @@ const messages = [];
     return messages;
   };
   
-  const saveMessage = (message) => {
+  const saveMessages = (message) => {
     messages.push(message);
   }
   
   module.exports = {
     getMessages,
-    saveMessage
+    saveMessages
   };
