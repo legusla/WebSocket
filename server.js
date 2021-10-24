@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const { Server: SocketServer } = require('socket.io');
 const { Server: HttpServer } = require('http');
 const Contenedor = require('./Contenedor');
@@ -6,6 +7,7 @@ const Contenedor = require('./Contenedor');
 const productosRouter = require('./routers/productos');
 
 const { getMessages, saveMessage } = require('./models/Messages');
+const path = require('path');
 
 const miContenedor = new Contenedor('./data/productos.json');
 
@@ -18,12 +20,19 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', exphbs({
+    defaultLayout: 'main',
+    layoutsDir: path.join(app.get('views'),'layouts'),
+    partialsDir: path.join(app.get('views'),'partials'),
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
 
 const productosContenedor = new Contenedor('./data/productos.json');
 
 io.on('connection', async socket => {
-    console.log(`Nuevo cliente conectado! ${socket.id}`)
+    console.log(`Nuevo cliente conectado: ${socket.id}`)
     
     // Mensajes
     const messages = await getMessages();
@@ -55,7 +64,7 @@ app.use('/api/productos', productosRouter);
 
 app.get('/', async (req, res) => {
     const lista = await productosContenedor.getAll();
-    res.render('../views/pages/form');
+    res.render('../views/index');
 });
 
 app.get('/form', async (req, res) => {
