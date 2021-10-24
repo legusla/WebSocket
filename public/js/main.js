@@ -31,15 +31,7 @@ socket.on('products', (products) => {
 
   const list = document.getElementById('real-time-products');
 
-  list.innerHTML = `
-  <table>
-    <thead>
-      <ol>
-        ${productList}
-      </ol>
-    <thead>
-  </table> 
-  `;
+  list.innerHTML = `<ol>${productList}</ol>`;
 
 });
 
