@@ -1,7 +1,6 @@
 {
   "name": "desafio12",
   "version": "1.0.0",
-  "description": "",
   "main": "Contenedor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,15 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "socket.io": "^4.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legusla/WebSocket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/legusla/WebSocket/issues"
+  },
+  "homepage": "https://github.com/legusla/WebSocket#readme",
+  "description": ""
 }
