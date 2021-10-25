@@ -4,29 +4,5 @@
     "precio": "123.45",
     "imagen": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
     "id": 1
-  },
-  {
-    "nombre": "qwe",
-    "precio": "123",
-    "imagen": "qwe",
-    "id": 2
-  },
-  {
-    "nombre": "qwe",
-    "precio": "123",
-    "imagen": "qwe",
-    "id": 3
-  },
-  {
-    "nombre": "qwe",
-    "precio": "123",
-    "imagen": "qwe",
-    "id": 4
-  },
-  {
-    "nombre": "qwe",
-    "precio": "123",
-    "imagen": "qwe",
-    "id": 5
   }
 ]
