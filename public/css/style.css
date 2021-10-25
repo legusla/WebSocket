@@ -1,0 +1,15 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+div {
+	display: block;
+}
+img {
+	display: flex;
+	width: 100%;
+}
