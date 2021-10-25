@@ -26,7 +26,9 @@ socket.on('products', (products) => {
   console.log(products);
 
   const productList = products.map((product) => `
-  <li>Nombre: ${product.nombre} - Precio: ${product.precio}</li>
+  <li>
+      Nombre: ${product.nombre} - Precio: $${product.precio} - Imagen:<img style="max-width: 3%" src="${product.imagen}" alt=""/> 
+  </li>
   `).join(" ");
 
   const list = document.getElementById('real-time-products');
