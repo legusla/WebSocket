@@ -27,7 +27,7 @@ socket.on('products', (products) => {
 
   const productList = products.map((product) => `
   <li>
-      Nombre: ${product.nombre} - Precio: $${product.precio} - Imagen:<img style="max-width: 3%" src="${product.imagen}" alt=""/> 
+      Producto: ${product.nombre} - Precio: $${product.precio} - Imagen: <img src="${product.imagen}" alt=""/> 
   </li>
   `).join(" ");
 
@@ -40,9 +40,11 @@ socket.on('products', (products) => {
 
 const renderMessages = (messages) => {
   const htmls = messages.map((messsage) => {
+    const fyh = Date().toLocaleString();
     return(`
       <div>
-        <strong class="text-primary">${messsage.author}</strong>
+        <strong class="mensaje">${messsage.author}</strong>
+        <time class="hora">[${fyh}]</time>:
         <em>${messsage.text}</em>
       </div>
     `);

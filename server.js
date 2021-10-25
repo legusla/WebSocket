@@ -40,10 +40,8 @@ io.on('connection', async socket => {
     
     // Fecha y hora
     socket.on('new-message', async data => {
-        data.fyh = new Date();
+        saveMessages(data);
 
-        await saveMessages(data);
-  
         const messages = await getMessages(); 
         io.sockets.emit('messages', messages);  
   });

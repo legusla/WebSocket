@@ -1,5 +1,6 @@
 *{
 	box-sizing: border-box;
+    text-align: justify;
 }
 
 body {
@@ -10,6 +11,28 @@ div {
 	display: block;
 }
 img {
-	display: flex;
-	width: 100%;
+    position: relative;
+    display:inline;
+	width: 1rem;
+    height: 1rem;
+}
+
+ol{
+    display:block;
+}
+.productos {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    
+}
+.mensaje{
+    color: blue;
+}
+time{
+    color: rgb(104, 0, 0);
+}
+em {
+    color: green;
+    font-style: italic;
 }
