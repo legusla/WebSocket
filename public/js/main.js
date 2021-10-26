@@ -40,7 +40,7 @@ socket.on('products', (products) => {
 
 const renderMessages = (messages) => {
   const htmls = messages.map((messsage) => {
-    const fyh = Date().toLocaleString();
+    const fyh = new Date().toLocaleString();
     return(`
       <div>
         <strong class="mensaje">${messsage.author}</strong>

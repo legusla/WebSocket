@@ -52,9 +52,9 @@ io.on('connection', async socket => {
     socket.emit('products', products);
 
     // Productos
-    socket.on('new-products',  (product) => {
+    socket.on('new-products',  async product => {
     productosContenedor.save(product);
-    const products = productosContenedor.getAll();
+    const products = await productosContenedor.getAll();
 
     io.sockets.emit('products', products);
     });
